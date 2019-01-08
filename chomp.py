@@ -36,8 +36,10 @@ class Board:
 
     
 class Player:
-    def __init__(self):
-        pass
+    def __init__(self, players):
+        self.players = players
+
+
 
     def __repr__(self):
-        pass
+        return f
