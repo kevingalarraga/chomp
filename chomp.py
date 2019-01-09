@@ -32,7 +32,10 @@ class Board:
         return str(board_df)
 
     def take(self, row, col):
-        pass
+        self.row = row
+        self.col = col
+        response = row,col
+
 
     
 class Player:
