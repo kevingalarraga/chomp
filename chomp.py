@@ -33,12 +33,14 @@ class Board:
         return str(board_df)
 
     def take(self, row, col):
+        a= Board
         self.row = row
         self.col = col
         response = (row, col)
-        if response =!
+        if response =! a:
+            return f'Coordiantes not in the Board'
 
-jk
+
 
     
 class Player:
