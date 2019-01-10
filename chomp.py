@@ -38,7 +38,7 @@ class Board:
         response = (row, col)
         if response =!
 
-
+jk
 
     
 class Player:
