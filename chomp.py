@@ -6,11 +6,11 @@ EMOJI = {-1: '\u2612', 0: ' ', 1: '\u2610'}
 
 class ChompGame:
     def __init__(self):
-
+        pass
 
 
     def __repr__(self):
-
+        pass
 
 
 class Board:
@@ -33,12 +33,21 @@ class Board:
         return str(board_df)
 
     def take(self, row, col):
-        a= Board
-        self.row = row
-        self.col = col
-        response = (row, col)
-        if response =! a:
-            return f'Coordiantes not in the Board'
+        a = Board
+        response = row, col
+        for response in Board:
+            response[row][col:] = 0
+
+
+
+
+
+
+
+
+
+
+
 
 
 
