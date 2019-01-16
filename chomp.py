@@ -54,7 +54,13 @@ class Board:
     
 class Player:
     def __init__(self, players):
-        self.players = players
+        players = []
+        Ready_player_1 = input("enter name choose you")
+        Ready_player_2 = input("also enter name you choose")
+
+
+    def coinflip(self):
+        return ("Player one has chosen.Player one is" random.choice(player))
 
 
 
