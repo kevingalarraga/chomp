@@ -12,6 +12,11 @@ class ChompGame:
     def __repr__(self):
         pass
 
+    def coinflip(self):
+        return ("Player one has chosen.Player one is" random.choice(players))
+
+
+
 
 class Board:
     def __init__(self, rows, cols):
@@ -59,8 +64,7 @@ class Player:
         Ready_player_2 = input("also enter name you choose")
 
 
-    def coinflip(self):
-        return ("Player one has chosen.Player one is" random.choice(player))
+
 
 
 
