@@ -13,7 +13,7 @@ class ChompGame:
         pass
 
     def coinflip(self):
-        return ("Player one has chosen.Player one is" random.choice(players))
+        return ("Player one has chosen,Player one is" random.choice(players))
 
 
 
