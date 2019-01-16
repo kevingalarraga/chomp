@@ -5,8 +5,11 @@ EMOJI = {-1: '\u2612', 0: ' ', 1: '\u2610'}
 
 
 class ChompGame:
-    def __init__(self):
-        pass
+    def __init__(self,size=(3,4)):
+        self.p1=Player()
+        self.p2=Player()
+        self.turn= random.choice([self.p1, self.p2])
+
 
 
     def __repr__(self):
@@ -52,21 +55,9 @@ class Board:
 
     
 class Player:
-    def __init__(self, players):
-        challengers = []
-        Ready_player_1 = input("enter name choose you")
-        Ready_player_2 = input("also enter name you choose")
-            challengers.append(Ready_player_1)
-            challengers.append(Ready_player_2)
-              print("PLAYER ONE HAS BEEN CHOSEN AND PLAYER ONE IS " random.choice(players))
-
-
-
-
-
-
-
-
+    def __init__(self, score=0, name=none):
+        self.score=score
+        self.name=input('Enter your name')
 
     def __repr__(self):
-        return f
+        return f'Player(score={self.score},names={self.names})'
