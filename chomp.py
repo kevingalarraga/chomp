@@ -5,8 +5,10 @@ EMOJI = {-1: '\u2612', 0: ' ', 1: '\u2610'}
 
 
 class ChompGame:
-    def __init__(self):
-        pass
+    def __init__(self, size=(3,4)):
+        self.p1 = Player()
+        self.p2 = Player()
+        self.turn = random.choice([self.p1, self.p2])
 
 
     def __repr__(self):
@@ -33,10 +35,12 @@ class Board:
         return str(board_df)
 
     def take(self, row, col):
-        a = Board
-        response = row, col
-        for response in Board:
-            response[row][col:] = 0
+        for r in range(row + 1):
+            self.state[r][col:] = 0
+        if r not in range(row+1):
+            return f'Coordinates not in the grid'
+
+
 
 
 
@@ -54,9 +58,8 @@ class Board:
     
 class Player:
     def __init__(self, players):
-        self.players = players
-
-
+        self.score = score
+        self.name = input('Enter your name')
 
     def __repr__(self):
-        return f
+        return f'Player(score={self.score},names={self.names})'
