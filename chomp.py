@@ -1,3 +1,4 @@
+
 import numpy as np
 import pandas as pd
 
@@ -39,20 +40,15 @@ class Board:
         return str(board_df)
 
     def take(self, row, col):
-      for r in range(row+1)
-            self.state[r][col:] = 0
+      for r in range(row+1):
+        self.state[:r][col:] = 0
+      if r is == self.state[-1][1]:
+        return f'(Game Over)
+      else: 
+        f'(Next PLayers Turn)
 
 
-
-
-
-
-
-
-
-
-
-
+    
     
 class Player:
     def __init__(self, score=0, name=none):
