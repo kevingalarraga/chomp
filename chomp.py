@@ -1,3 +1,4 @@
+
 import numpy as np
 import pandas as pd
 
@@ -5,9 +6,10 @@ EMOJI = {-1: '\u2612', 0: ' ', 1: '\u2610'}
 
 
 class ChompGame:
-    def __init__(self):
-        self.p1 =Player()
-        self.p2 = PLayer()
+    def __init__(self,size=(3,4)):
+        self.p1=Player()
+        self.p2=Player()
+        self.turn= random.choice([self.p1, self.p2])
 
 
 
@@ -43,6 +45,12 @@ class Board:
         return str(board_df)
 
     def take(self, row, col):
+      for r in range(row+1):
+        self.state[:r][col:] = 0
+      if r is == self.state[-1][1]:
+        return f'(Game Over)
+      else:
+        f'(Next PLayers Turn)
 
 
 
@@ -61,18 +69,9 @@ class Board:
 
     
 class Player:
-    def __init__(self, players):
-        players = []
-        Ready_player_1 = input("enter name choose you")
-        Ready_player_2 = input("also enter name you choose")
-            players.append(Ready_player_1)
-            players.append(Ready_player_2)
-                ("Player one has chosen.Player one is" random.choice(players))
-
-
-
-
+    def __init__(self, score=0, name=none):
+        self.score=score
+        self.name=input('Enter your name')
 
     def __repr__(self):
-        return f
-
+        return f'Player(score={self.score},names={self.names})'
