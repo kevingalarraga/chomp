@@ -16,8 +16,6 @@ class ChompGame:
     def __repr__(self):
         pass
 
-    def coinflip(self):
-        return ("Player one has chosen.Player one is" random.choice(players))
 
     def play:
         #accept user input, check game is over and use user input for take function
