@@ -6,22 +6,28 @@ EMOJI = {-1: '\u2612', 0: ' ', 1: '\u2610'}
 
 
 class ChompGame:
-    def __init__(self,size=(3,4)):
-        self.p1=Player()
-        self.p2=Player()
-        self.turn= random.choice([self.p1, self.p2])
-
-
+    def __init__(self, size=(3, 4)):
+        self.p1 = Player()
+        self.p2 = Player()
+        self.turn = random.choice([self.p1, self.p2])
 
     def __repr__(self):
         pass
 
-
-    def play:
-        #accept user input, check game is over and use user input for take function
-
-
-
+    def play(self):
+        a = self.p1
+        b = self.p2
+        b_choice = take
+        if self.turn == a or b:
+            self.turn_choice = take
+            if self.turn_choice == self.state[-1][0]:
+                return f'GAME OVER'
+            else:
+                return f'Next Players Turn'
+            if b_choice == self.state[-1][0]:
+                return f'GAME OVER'
+            else:
+                return f'Next Players Turn'
 
 class Board:
     def __init__(self, rows, cols):
@@ -37,39 +43,22 @@ class Board:
 
     def __str__(self):
         col_idx = range(self.cols)
-        row_idx = [chr(letter) for letter in range(65, 65+self.rows)]
+        row_idx = [chr(letter) for letter in range(65, 65 + self.rows)]
         board_emoji = np.array([[EMOJI[val] for val in row] for row in self.state])
         board_df = pd.DataFrame(data=board_emoji, index=row_idx, columns=col_idx)
         return str(board_df)
 
     def take(self, row, col):
-      for r in range(row+1):
-        self.state[:r][col:] = 0
-      if r is == self.state[-1][1]:
-        return f'(Game Over)
-      else:
-        f'(Next PLayers Turn)
+        for r in range(row + 1):
+            self.state[:r][col:] = 0
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-    
 class Player:
-    def __init__(self, score=0, name=none):
-        self.score=score
-        self.name=input('Enter your name')
+    def __init__(self, score=0, name= 'none'):
+        self.score = score
+        self.name = input('Enter your name')
 
     def __repr__(self):
         return f'Player(score={self.score},names={self.names})'
