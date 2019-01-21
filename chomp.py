@@ -6,7 +6,9 @@ EMOJI = {-1: '\u2612', 0: ' ', 1: '\u2610'}
 
 class ChompGame:
     def __init__(self):
-        pass
+        self.p1 =Player()
+        self.p2 = PLayer()
+
 
 
     def __repr__(self):
@@ -14,6 +16,9 @@ class ChompGame:
 
     def coinflip(self):
         return ("Player one has chosen.Player one is" random.choice(players))
+
+    def play:
+        #accept user input, check game is over and use user input for take function
 
 
 
@@ -38,10 +43,8 @@ class Board:
         return str(board_df)
 
     def take(self, row, col):
-        a = Board
-        response = row, col
-        for response in Board:
-            response[row][col:] = 0
+
+
 
 
 
@@ -62,7 +65,9 @@ class Player:
         players = []
         Ready_player_1 = input("enter name choose you")
         Ready_player_2 = input("also enter name you choose")
-
+            players.append(Ready_player_1)
+            players.append(Ready_player_2)
+                ("Player one has chosen.Player one is" random.choice(players))
 
 
 
@@ -70,3 +75,4 @@ class Player:
 
     def __repr__(self):
         return f
+
