@@ -50,7 +50,7 @@ class Board:
 
     def take(self, row, col):
         for r in range(row + 1):
-            self.state[:r][col:] = 0
+            self.state[r][col:] = 0
 
 
 
