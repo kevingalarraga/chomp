@@ -5,15 +5,28 @@ EMOJI = {-1: '\u2612', 0: ' ', 1: '\u2610'}
 
 
 class ChompGame:
-    def __init__(self, size=(3,4)):
+    def __init__(self, size=(3, 4)):
         self.p1 = Player()
         self.p2 = Player()
         self.turn = random.choice([self.p1, self.p2])
 
-
     def __repr__(self):
         pass
 
+    def play(self):
+        a = self.p1
+        b = self.p2
+        b_choice = take
+        if self.turn == a or b:
+            self.turn_choice = take
+            if self.turn_choice == self.state[-1][0]:
+                return f'GAME OVER'
+            else:
+                return f'Next Players Turn'
+            if b_choice == self.state[-1][0]:
+                return f'GAME OVER'
+            else:
+                return f'Next Players Turn'
 
 class Board:
     def __init__(self, rows, cols):
@@ -36,28 +49,13 @@ class Board:
 
     def take(self, row, col):
         for r in range(row + 1):
-            self.state[r][col:] = 0
-        if r not in range(row+1):
-            return f'Coordinates not in the grid'
-
-
-
-
-
-
-
-
-
-
-
-
-
+            self.state[:r][col:] = 0
 
 
 
     
 class Player:
-    def __init__(self, players):
+    def __init__(self, score=0, name= 'none'):
         self.score = score
         self.name = input('Enter your name')
 
