@@ -14,10 +14,10 @@ class ChompGame:
         pass
 
     def play(self):
-         a = self.p1
-         b = self.p2
-         _choice = take
-         if self.turn == a or b:
+        a = self.p1
+        b = self.p2
+        b_choice = take
+        if self.turn == a or b:
             self.turn_choice = take
             if self.turn_choice == self.state[-1][0]:
                 return f'GAME OVER'
@@ -27,7 +27,6 @@ class ChompGame:
                 return f'GAME OVER'
             else:
                 return f'Next Players Turn'
-
 
 class Board:
     def __init__(self, rows, cols):
@@ -43,7 +42,7 @@ class Board:
 
     def __str__(self):
         col_idx = range(self.cols)
-        row_idx = [chr(letter) for letter in range(65, 65+self.rows)]
+        row_idx = [chr(letter) for letter in range(65, 65 + self.rows)]
         board_emoji = np.array([[EMOJI[val] for val in row] for row in self.state])
         board_df = pd.DataFrame(data=board_emoji, index=row_idx, columns=col_idx)
         return str(board_df)
