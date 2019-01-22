@@ -14,10 +14,10 @@ class ChompGame:
         pass
 
     def play(self):
-        a = self.p1
-        b = self.p2
-        b_choice = take
-        if self.turn == a or b:
+         a = self.p1
+         b = self.p2
+         _choice = take
+         if self.turn == a or b:
             self.turn_choice = take
             if self.turn_choice == self.state[-1][0]:
                 return f'GAME OVER'
@@ -27,6 +27,7 @@ class ChompGame:
                 return f'GAME OVER'
             else:
                 return f'Next Players Turn'
+
 
 class Board:
     def __init__(self, rows, cols):
@@ -49,11 +50,9 @@ class Board:
 
     def take(self, row, col):
         for r in range(row + 1):
-            self.state[:r][col:] = 0
+            self.state[r][col:] = 0
 
 
-
-    
 class Player:
     def __init__(self, score=0, name= 'none'):
         self.score = score
