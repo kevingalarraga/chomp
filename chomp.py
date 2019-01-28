@@ -54,7 +54,7 @@ class ChompGame:
 
                 self.game_over = True
 
-                self.current_player.wins += 1
+                self.other_player =+ 1
 
 
 
@@ -69,7 +69,7 @@ class ChompGame:
 
 
         self.current_player = random.choice(self.players)
-
+        self.other_player = random.choice(self.player)[-1]
 
 
     def move(self):
