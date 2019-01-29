@@ -1,15 +1,11 @@
+
 import numpy as np
-
 import pandas as pd
-import random
-
 import random
 
 
 
 EMOJI = {-1: '\u2612', 0: ' ', 1: '\u2610'}
-
-
 
 
 
@@ -26,6 +22,7 @@ class ChompGame:
     def __repr__(self):
         return f'ChompGame({self.n_players}, {self.size})'
 
+    
     def play(self):
         self.setup()
         while not self.game_over:
@@ -36,6 +33,7 @@ class ChompGame:
                 self.game_over = True
                 print(f'{self.current_player}, You Lost')
             else:
+                pass
 
 
     def setup(self):
@@ -46,15 +44,6 @@ class ChompGame:
 
 
         self.current_player = random.choice(self.players).cycle
-
-
-
-
-
-
-
-
-
 
 
     def move(self):
@@ -74,44 +63,27 @@ class Board:
         # ones for chocolate, zeros for eaten squares, and -1 for poison
 
         self.rows = rows
-
         self.cols = cols
-
         self.state = np.ones((rows, cols), dtype=int)
-
         self.state[-1][0] = -1
 
 
-
     def __repr__(self):
-
         return f'Board({self.rows}, {self.cols})'
-
 
 
     def __str__(self):
 
         col_idx = range(self.cols)
-        row_idx = [chr(letter) for letter in range(65, 65+self.rows)]
-
-        row_idx = [chr(letter) for letter in range(65, 65+self.rows)]
-
+        row_idx = [chr(letter) for letter in range(65, 65+self.rows)
         board_emoji = np.array([[EMOJI[val] for val in row] for row in self.state])
-
         board_df = pd.DataFrame(data=board_emoji, index=row_idx, columns=col_idx)
-
         return str(board_df)
-
 
 
     def take(self, row, col):
         # self.state[:row+1, col:] = 0
         for r in range(row+1):
-
-        # self.state[:row+1, col:] = 0
-
-        for r in range(row+1):
-
             self.state[r][col:] = 0
 
 
@@ -125,5 +97,3 @@ class Player:
 
     def __str__(self):
         return self.name
-
-l
