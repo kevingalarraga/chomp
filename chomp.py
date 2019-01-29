@@ -26,14 +26,28 @@ class ChompGame:
             self.move()
             if self.board.state[-1][0] == 0:
                 self.game_over = True
-                self.current_player.wins += 1
+                print(f'{self.current_player}, You Lost')
+            else:
+
 
     def setup(self):
         for i in range(1, self.n_players + 1):
+
             print(f'***Player {i}***')
             self.players.append(Player())
 
-        self.current_player = random.choice(self.players)
+
+        self.current_player = random.choice(self.players).cycle
+
+
+
+
+
+
+
+
+
+
 
     def move(self):
         coord_str = input("Enter the coordinates for your move. (e.g. A3)")
@@ -77,10 +91,5 @@ class Player:
         return f'Player({self.name})'
 
     def __str__(self):
-return self.name
+        return self.name
 
-
-
-
-
-k
